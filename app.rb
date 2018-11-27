@@ -5,10 +5,15 @@ also_reload('lib/**/*.rb')
 require('./lib/project')
 require('capybara')
 
-get('/')do
-  @new_riddle = Riddles.new()
-  @random_riddle = @new_riddle.random_riddle.join()
-  @answer = @new_riddle.find_answer
+
+@@display = "none"
+@@new_riddle = Riddles.new()
+@@random_riddle = @@new_riddle.random_riddle.join()
+@@answer = @@new_riddle.find_answer
+@@hint = @@new_riddle.find_hint
+
+get('/') do
+  @@display = "none"
   erb(:input)
 end
 
@@ -19,6 +24,8 @@ post('/output') do
   if @user_answer === @answer
     erb(:success)
   else
-    erb(:failure)
+    @@display = "block"
+    erb(:input)
+
   end
 end

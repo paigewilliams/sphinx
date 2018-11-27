@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <title>Riddles of the Sphinx</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Try to Solve the Riddle of the Sphinx</h1>
+
+<form class="form-group" action="/output" method="post">
+  <label for="riddle"></label><br>
+  <input type="text" name="riddle"><br>
+  <input type="hidden" name="answer" value="chessmen">
+  <input type="hidden" name="hint" value="">
+  <input type="hidden" name="current" value="">
+  <input type="submit" value="submit">
+</form>
+<div class="hint" style= "display:block">
+  <h3></h3>
+
+</div>
+
+    </div>
+  </body>
+</html>
