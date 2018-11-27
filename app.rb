@@ -7,8 +7,8 @@ require('capybara')
 
 get('/')do
   @new_riddle = Riddles.new()
+  @random_riddle = @new_riddle.random_riddle.join()
   @answer = @new_riddle.find_answer
-  binding.pry
   erb(:input)
 end
 
