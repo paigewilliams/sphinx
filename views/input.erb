@@ -3,5 +3,6 @@
 <form class="form-group" action="/output" method="post">
   <label for="riddle"><%= @random_riddle %></label><br>
   <input type="text" name="riddle"><br>
+  <input type="hidden" name="answer" value="<%= @answer %>">
   <input type="submit" value="submit">
 </form>

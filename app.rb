@@ -12,14 +12,13 @@ get('/')do
   erb(:input)
 end
 
-# post('/output') do
-#
-#   @answer = params.fetch("riddle")
-#   @answer1 = params.fetch("riddle1")
-#   @answer2 = params.fetch("riddle2")
-#   # if @answer === "human" && @answer1 === "chessmen" && @answer2 === "teabag"
-#   #   erb(:success)
-#   # else
-#   #   erb(:failure)
-#   # end
-# end
+post('/output') do
+
+  @user_answer = params.fetch("riddle")
+  @answer = params.fetch("answer")
+  if @user_answer === @answer
+    erb(:success)
+  else
+    erb(:failure)
+  end
+end
