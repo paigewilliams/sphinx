@@ -11,7 +11,9 @@ end
 
 post('/output') do
   @answer = params.fetch("riddle")
-  if @answer === "human being" || @answer === "human" || @answer === "man"
+  @answer1 = params.fetch("riddle1")
+  @answer2 = params.fetch("riddle2")
+  if @answer === "human"  && @answer1 === "chessmen" && @answer2 === "teabag"
     erb(:success)
   else
     erb(:failure)
