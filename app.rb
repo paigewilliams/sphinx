@@ -11,8 +11,7 @@ end
 
 post('/output') do
   @answer = params.fetch("riddle")
-  binding.pry
-  if @answer == "riddle"
+  if @answer === "human being" || @answer === "human" || @answer === "man"
     erb(:success)
   else
     erb(:failure)
